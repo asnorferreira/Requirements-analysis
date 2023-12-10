@@ -1,0 +1,25 @@
+@startuml
+class PresenceIdentificationSystem {
+    - cameras: List
+    - loggedEvents: List
+    + detectPresence(camera_id)
+    + logEvent(event)
+}
+
+class AlertManager {
+    - managerCellNumber: String
+    - alertHistory: List
+    + sendAlert(message, event)
+}
+
+class FacialRecognitionSystem {
+    - facialDataBank: Dictionary
+    - recognitionLog: List
+    + recognizeFace(image)
+    + updateDataBank(user_id, image)
+}
+
+PresenceIdentificationSystem "1" -- "n" AlertManager : sends data >
+PresenceIdentificationSystem "1" -- "n" FacialRecognitionSystem : uses >
+
+@enduml

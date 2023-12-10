@@ -1,0 +1,18 @@
+@startuml
+actor Employees
+actor Manager
+actor SecuritySystem
+
+usecase UC1 as "Voice-Controlled Access"
+usecase UC2 as "Lighting and AC Voice Control"
+usecase UC3 as "Security Camera Monitoring"
+usecase UC4 as "Receiving Security Alerts"
+usecase UC5 as "Facial Recognition Authentication"
+
+Employees --> UC1
+Employees --> UC2
+SecuritySystem --> UC3
+Manager --> UC4
+Employees --> UC5
+
+@enduml
